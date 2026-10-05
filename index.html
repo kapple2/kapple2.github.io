@@ -10,6 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("kapple2Theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div id="app" class="app">
@@ -17,6 +25,7 @@
       <nav class="nav" aria-label="주요 메뉴">
         <a href="#/" class="brand" data-link>KAPPLE ][</a>
         <div class="nav-links">
+          <div id="themeHost" class="theme-host"></div>
           <div id="trnHost" class="trn-host"></div>
           <a href="#/" data-link>홈</a>
           <a href="#/about" data-link>소개</a>
@@ -104,6 +113,7 @@
   </template>
 
   <script src="app.js"></script>
+  <script src="theme.js"></script>
   <script src="translate.js"></script>
 </body>
 </html>
