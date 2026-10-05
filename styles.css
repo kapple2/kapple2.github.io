@@ -1,0 +1,345 @@
+:root {
+  --bg: #362712;
+  --bg2: #2a1e0e;
+  --ink: #f3e6cc;
+  --muted: #c9ad8a;
+  --accent: #8fbf4a;
+  --accent-dim: #6a8f35;
+  --beige: #e2cfb0;
+  --line: rgba(226, 207, 176, 0.22);
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bg);
+  top: 0 !important;
+}
+
+/* Hide Google Translate chrome / “Powered by” */
+#google_translate_element {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-logo-link {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Custom language switcher (same pattern as runable.app) */
+.trn-host {
+  display: inline-flex;
+  align-items: center;
+}
+
+.trn-switcher {
+  position: relative;
+  margin-right: 0.15rem;
+}
+
+.trn-toggle {
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  border-radius: 8px;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--beige);
+  font-size: 1.05rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.trn-toggle:hover {
+  border-color: var(--accent-dim);
+  background: #3f3018;
+}
+
+.trn-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 200px;
+  max-height: min(65vh, 480px);
+  overflow-y: auto;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  padding: 6px;
+  z-index: 400;
+}
+
+.trn-menu.open {
+  display: block;
+}
+
+.trn-option {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+.trn-option:hover {
+  background: #46361c;
+  color: var(--beige);
+}
+
+.trn-flag,
+.trn-toggle-flag {
+  width: 20px;
+  height: 15px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(226, 207, 176, 0.2);
+  flex: 0 0 auto;
+  display: block;
+}
+
+.trn-toggle-flag {
+  width: 22px;
+  height: 16px;
+}
+
+.trn-option-label {
+  display: inline-block;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 0.75rem 0 3rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  color: var(--beige);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.view {
+  min-height: 60vh;
+  animation: fade-rise 0.45s ease both;
+}
+
+.view:focus {
+  outline: none;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 9.5rem);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background: url("assets/kapple-ii-plus.png?v=9") center 40% / 45.5% auto no-repeat;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 0 2rem;
+  max-width: 36rem;
+  animation: fade-rise 0.7s ease 0.1s both;
+}
+
+.hero-brand {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 9vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--beige);
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+}
+
+.lede {
+  margin: 0 0 1.35rem;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 32ch;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #1a140c;
+  border: 1px solid #b6db7a;
+}
+
+.btn.ghost {
+  background: rgba(20, 14, 10, 0.35);
+  color: var(--beige);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(4px);
+}
+
+.btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.page {
+  padding: 1.25rem 0 1rem;
+}
+
+.page h1 {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--beige);
+}
+
+.prose {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.prose strong {
+  color: var(--beige);
+}
+
+.prose p {
+  margin: 0 0 1.1rem;
+}
+
+.inline-figure {
+  margin: 1.75rem 0 0;
+  max-width: 309px;
+}
+
+.inline-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  background: var(--bg2);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: calc(100vh - 11rem);
+  }
+
+  .hero-copy {
+    padding-bottom: 1.5rem;
+  }
+}
