@@ -10,6 +10,7 @@
     { code: "es", label: "Español", flag: "es", emoji: "🇪🇸" },
     { code: "fr", label: "Français", flag: "fr", emoji: "🇫🇷" },
     { code: "de", label: "Deutsch", flag: "de", emoji: "🇩🇪" },
+    { code: "ru", label: "Русский", flag: "ru", emoji: "🇷🇺" },
   ];
 
   let applyTimer = null;
