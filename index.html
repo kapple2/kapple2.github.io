@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KAPPLE ][ — kapple2</title>
+  <meta name="description" content="KAPPLE ][ — 한국형 Apple II plus 호환기와 추억을 담은 kapple2 페이지" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="top">
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#/" class="brand" data-link>KAPPLE ][</a>
+        <div class="nav-links">
+          <div id="trnHost" class="trn-host"></div>
+          <a href="#/" data-link>홈</a>
+          <a href="#/about" data-link>소개</a>
+          <a href="#/cafe" data-link>카페</a>
+          <a href="#/repo" data-link>저장소</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+
+  <template id="tpl-home">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1 class="hero-brand">KAPPLE ][</h1>
+        <p class="lede">1983년 즈음 만난 나의 첫 컴퓨터 — 한국형 Apple II plus 호환기.</p>
+        <div class="cta">
+          <a class="btn primary" href="#/about" data-link>이야기 보기</a>
+          <a class="btn ghost" href="https://cafe.naver.com/appleii" target="_blank" rel="noopener">애플2 카페</a>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-about">
+    <section class="page">
+      <h1>소개</h1>
+      <div class="prose">
+        <p>
+          <strong>KAPPLE ][</strong>는 한국의 Apple II plus 호환기입니다.
+          저는 1983년 무렵, 국민학교에 다니던 시절에 이 컴퓨터를 구입했습니다.
+          제 인생 첫 컴퓨터였고, 그 위에서 수많은 게임을 즐겼으며
+          AppleSoft BASIC으로 프로그래밍을 배우고, LISA 어셈블러로 조금의 어셈블리도 익혔습니다.
+        </p>
+        <p>
+          이 페이지는 그 기억과, Apple II 관련 자료·코드·문서를 모아 두기 위한 공간입니다.
+        </p>
+      </div>
+      <figure class="inline-figure">
+        <img src="assets/kapple-ii-plus.png?v=9" alt="KAPPLE ][ 컴퓨터와 모니터" width="900" height="1200" />
+      </figure>
+    </section>
+  </template>
+
+  <template id="tpl-cafe">
+    <section class="page">
+      <h1>애플2 카페</h1>
+      <div class="prose">
+        <p>
+          네이버 <strong>Apple2 Cafe</strong> 회원입니다.
+          닉네임은 <strong>KAPPLE</strong> 입니다.
+        </p>
+        <p>
+          <a class="btn primary" href="https://cafe.naver.com/appleii" target="_blank" rel="noopener">
+            cafe.naver.com/appleii
+          </a>
+        </p>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-repo">
+    <section class="page">
+      <h1>저장소</h1>
+      <div class="prose">
+        <p>
+          이 저장소는 Apple II / KAPPLE ][ 관련 코드, 정보, 문서를 모아 두는 곳입니다.
+        </p>
+        <p>
+          <a class="btn primary" href="https://github.com/kapple2" target="_blank" rel="noopener">
+            github.com/kapple2
+          </a>
+        </p>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>
