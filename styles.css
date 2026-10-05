@@ -51,6 +51,24 @@ iframe.goog-te-banner-frame,
   min-height: 0 !important;
 }
 
+/* Hide Google Translate hover “original text” popup */
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.VIpgJd-yAWNEb-L7lbkb,
+.VIpgJd-yAWNEb-hvhgNd {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.goog-text-highlight,
+font font {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 /* Custom language switcher (same pattern as runable.app) */
 .trn-host {
   display: inline-flex;
@@ -317,6 +335,18 @@ iframe.goog-te-banner-frame,
 
 .prose p {
   margin: 0 0 1.1rem;
+}
+
+.repo-list {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.repo-list a {
+  color: var(--accent);
+  word-break: break-all;
 }
 
 .inline-figure {
