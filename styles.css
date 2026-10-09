@@ -469,6 +469,20 @@ font font {
   color: var(--muted);
 }
 
+.footer {
+  margin-top: 2.5rem;
+  padding: 1.25rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Free Web Stats map injects margin-right equal to map width; strip it so centering works */
+.footer > span {
+  margin: 0 !important;
+  position: relative;
+}
+
 @media (max-width: 600px) {
   .hero {
     min-height: calc(100vh - 11rem);
