@@ -269,6 +269,23 @@ font font {
   border-color: var(--accent-dim);
 }
 
+.nav-links a.nav-out {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.16rem;
+}
+
+.nav-links a[data-link] + a.nav-out {
+  margin-inline-start: 0.4rem;
+}
+
+.nav-links a.nav-out::after {
+  content: "↗";
+  font-size: 0.72em;
+  line-height: 1;
+  opacity: 0.75;
+}
+
 .view {
   min-height: 60vh;
   animation: fade-rise 0.45s ease both;
@@ -396,16 +413,116 @@ font font {
   margin: 0 0 1.1rem;
 }
 
+.repo-blurb {
+  max-width: none;
+  margin: 0 0 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.repo-blurb a {
+  color: var(--accent);
+}
+
 .repo-list {
   margin: 0 0 1.25rem;
   padding-left: 1.25rem;
   color: var(--muted);
   line-height: 1.8;
+  max-width: 62ch;
 }
 
-.repo-list a {
+.repo-list a,
+.repo-card a {
   color: var(--accent);
   word-break: break-all;
+}
+
+.repo-cards {
+  list-style: none;
+  margin: 0.4rem 0 3.75rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.repo-card {
+  margin: 0;
+  padding: 0.85rem 0.85rem 0.75rem;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.repo-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.repo-card-head:last-child {
+  margin-bottom: 0;
+}
+
+.repo-card h2 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--heading);
+}
+
+.repo-card a {
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.repo-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.repo-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.repo-github {
+  margin: 2rem 0 6.5rem;
+}
+
+.repo-more-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.55rem, 3vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--heading);
+}
+
+.repo-cards + .repo-more-title {
+  margin-top: 1.35rem;
+}
+
+@media (min-width: 860px) {
+  .repo-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem 1.15rem;
+  }
 }
 
 .inline-figure {
