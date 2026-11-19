@@ -1,0 +1,42 @@
+disk_index = [
+    {
+        filename: 'json/disks/audit.json',
+        name: 'Apple II 점검',
+        category: '도구',
+    },
+    {
+        filename: 'json/disks/blank_dos33.json',
+        name: '빈 DOS 3.3',
+        category: '빈 디스크',
+    },
+    {
+        filename: 'json/disks/blank_prodos.json',
+        name: '빈 ProDOS',
+        category: '빈 디스크',
+    },
+    {
+        filename: 'json/disks/dos33master.json',
+        name: 'DOS 3.3 마스터',
+        category: '시스템',
+    },
+    {
+        filename: 'json/disks/dos33master2.json',
+        name: 'DOS 3.3 마스터 2',
+        category: '시스템',
+    },
+    {
+        filename: 'json/disks/dos33sample.json',
+        name: 'DOS 3.3 샘플',
+        category: '시스템',
+    },
+    {
+        filename: 'json/disks/prodos.json',
+        name: 'ProDOS',
+        category: '시스템',
+    },
+    {
+        filename: 'json/disks/prodos8.json',
+        name: 'ProDOS 8',
+        category: '시스템',
+    },
+];
