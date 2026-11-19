@@ -3,7 +3,7 @@
   const routes = {
     "/": "tpl-home",
     "/about": "tpl-about",
-    "/cafe": "tpl-cafe",
+    "/company": "tpl-company",
     "/repo": "tpl-repo",
   };
 

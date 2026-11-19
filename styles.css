@@ -248,6 +248,14 @@ font font {
   text-decoration: none;
 }
 
+.brand-logo {
+  display: block;
+  height: 51px; /* same height as the emulator badge */
+  width: auto;
+  /* clip the leftover outline of the badge: more from the bottom */
+  clip-path: inset(2% 2% 5% 2%);
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -323,7 +331,7 @@ font font {
 .hero-copy {
   position: relative;
   z-index: 1;
-  padding: 2.5rem 0 2rem;
+  padding: 2.5rem 0 0;
   max-width: 36rem;
   animation: fade-rise 0.7s ease 0.1s both;
 }
@@ -405,6 +413,65 @@ font font {
   color: var(--muted);
 }
 
+.company-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.company-photos {
+  display: grid;
+  gap: 1rem;
+}
+
+.company-photo {
+  margin: 0;
+}
+
+.company-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: var(--img-shadow);
+  background: var(--bg2);
+}
+
+.fiction-box {
+  max-width: 30rem;
+  margin: 2.5rem auto 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--ghost-bg);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.fiction-box h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.fiction-cta {
+  margin: 0.4rem 0 0;
+  text-align: center;
+}
+
+.fiction-box .prose {
+  max-width: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.fiction-box .prose p {
+  margin: 0 0 0.8rem;
+}
+
 .prose strong {
   color: var(--heading);
 }
@@ -468,6 +535,12 @@ font font {
 
 .repo-card-head:last-child {
   margin-bottom: 0;
+}
+
+.repo-card-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.9rem;
 }
 
 .repo-card h2 {
@@ -598,6 +671,16 @@ font font {
 .footer > span {
   margin: 0 !important;
   position: relative;
+}
+
+@media (max-width: 860px) {
+  .company-split {
+    grid-template-columns: 1fr;
+  }
+
+  .company-photo {
+    max-width: none;
+  }
 }
 
 @media (max-width: 600px) {

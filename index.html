@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KAPPLE ][ — kapple2</title>
   <meta name="description" content="KAPPLE ][ — 한국형 Apple II plus 호환기와 추억을 담은 kapple2 페이지" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -23,18 +23,19 @@
   <div id="app" class="app">
     <header class="top">
       <nav class="nav" aria-label="주요 메뉴">
-        <a href="#/" class="brand" data-link>KAPPLE ][</a>
+        <a href="#/" class="brand" data-link><img class="brand-logo" src="assets/kapple-logo.png" alt="KAPPLE ][" width="1000" height="302" /></a>
         <div class="nav-links">
           <div id="themeHost" class="theme-host"></div>
           <div id="trnHost" class="trn-host"></div>
           <a href="#/" data-link>홈</a>
-          <a href="#/about" data-link>소개</a>
-          <a href="#/cafe" data-link>카페</a>
+          <a href="#/company" data-link>회사</a>
           <a href="#/repo" data-link>저장소</a>
+          <a href="emulator/" title="브라우저에서 돌아가는 Apple ][ Plus 에뮬레이터">에뮬레이터</a>
           <a class="nav-out" href="https://github.com/kapple2/wiki/wiki/" target="_blank" rel="noopener">위키페이지</a>
           <a class="nav-out" href="https://archive.org/details/@kapple_" target="_blank" rel="noopener">아카이브</a>
           <a class="nav-out" href="https://www.youtube.com/@%EC%BA%90%ED%94%8C2%EC%B1%84%EB%84%90" target="_blank" rel="noopener">유튜브채널</a>
           <a class="nav-out" href="https://x.com/kapple2plus" target="_blank" rel="noopener">트위터</a>
+          <a href="#/about" data-link>소개</a>
         </div>
       </nav>
     </header>
@@ -53,10 +54,6 @@
       <div class="hero-copy">
         <h1 class="hero-brand">KAPPLE ][</h1>
         <p class="lede">1983년 즈음 만난 나의 첫 컴퓨터 — 한국형 Apple II plus 호환기.</p>
-        <div class="cta">
-          <a class="btn primary" href="#/about" data-link>이야기 보기</a>
-          <a class="btn ghost" href="https://cafe.naver.com/appleii" target="_blank" rel="noopener">애플2 카페</a>
-        </div>
       </div>
     </section>
   </template>
@@ -78,12 +75,7 @@
       <figure class="inline-figure">
         <img src="assets/kapple-ii-plus.png?v=9" alt="KAPPLE ][ 컴퓨터와 모니터" width="900" height="1200" />
       </figure>
-    </section>
-  </template>
-
-  <template id="tpl-cafe">
-    <section class="page">
-      <h1>애플2 카페</h1>
+      <h2>애플2 카페</h2>
       <div class="prose">
         <p>
           한국 애플2 컴퓨터 사용자 모임 - 네이버 <strong>Apple2 Cafe</strong> 회원입니다.
@@ -94,6 +86,58 @@
             cafe.naver.com/appleii
           </a>
         </p>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-company">
+    <section class="page">
+      <h1>회사</h1>
+
+      <h2>캐플소프트 KAPPLE Software</h2>
+      <div class="company-split">
+        <div class="prose">
+          <p>
+            캐플소프트(KAPPLE Software)는 1983년 서울의 작은 지하 작업실에서 문을 연 Apple II 전용 소프트웨어 회사입니다.
+            그 무렵 가정과 학교에는 애플2 호환기가 들어오기 시작했는데, 그 화면을 채울 프로그램은 턱없이 부족했습니다.
+            직원은 세 명이었고, 낮에는 디스켓을 복사하고 밤에는 코드를 짰습니다.
+          </p>
+          <p>캐플소프트는 세 가지 일을 합니다.</p>
+          <ul>
+            <li><strong>한글화</strong> — 해외 명작의 메뉴와 대사를 한글로 옮기고, 화면에 한글 글꼴을 입힙니다.</li>
+            <li><strong>신작</strong> — 애플2에 없던 보드게임과 생활 속 놀이를 BASIC과 어셈블리로 처음부터 만듭니다.</li>
+            <li><strong>이식</strong> — MSX나 다른 기종에서 돌던 작품을 애플2 플러스에 맞춰 옮겨 싣습니다.</li>
+          </ul>
+          <p>
+            디스켓 한 장에도 밤을 새운 흔적이 남습니다. 캐플소프트의 원칙은 단순합니다.
+            <em>디스켓 한 장에 정성 한 가지.</em>
+          </p>
+        </div>
+        <div class="company-photos">
+          <figure class="company-photo">
+            <img src="assets/company-office2.jpg" alt="캐플소프트 사무실" width="1366" height="745" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="company-photo">
+            <img src="assets/company-office5.jpg" alt="캐플소프트 작업실" width="1366" height="746" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
+
+      <div class="fiction-box">
+        <h2>이 회사는 가상의 회사입니다</h2>
+        <div class="prose">
+          <p>
+            여기까지 읽으셨다면 조금 놀라셨을지도 모르겠습니다. 캐플소프트는 <strong>실제로 존재하지 않는 가상의 회사</strong>입니다.
+            1983년의 서울에도, 지금의 어디에도 이 이름으로 등록된 회사는 없습니다.
+          </p>
+          <p>
+            애플2 소프트웨어를 소개하는 레트로풍 가상 광고를 꾸며보려고 지어낸 이름입니다.
+            저장소에 올라온 한글화 게임, 자작 소프트웨어, 포팅 프로그램들은 모두 실제로 동작하는 파일들이지만,
+            ‘캐플소프트’는 이 프로그램들을 진짜 옛날 소프트웨어 회사의 출시작처럼 설정해 보려고 재미로 만든 가상의 레이블입니다.
+          </p>
+          <p>캐플소프트의 프로그램들은 저장소 페이지에서 만날 수 있습니다.</p>
+          <p class="fiction-cta"><a class="btn ghost" href="#/repo" data-link>저장소 보기</a></p>
+        </div>
       </div>
     </section>
   </template>
@@ -132,7 +176,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>Zork1 한글화 버전</h2>
-            <a href="https://github.com/kapple2/koreanization/tree/main/zork1_ko" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/koreanization/tree/main/zork1_ko" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/koreanization/main/zork1_ko/zork1_ko.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/AQ6gqt-vY5s" title="Zork1 한글화" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -141,7 +185,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>애플2용 문패트롤 (달순찰대) 한글화 버전</h2>
-            <a href="https://github.com/kapple2/koreanization/tree/main/moon_patrol" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/koreanization/tree/main/moon_patrol" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/koreanization/main/moon_patrol/moon_patrol-korean-v1.1.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/s_bPsC2sdW0" title="문패트롤 한글화" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -159,7 +203,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>애플2 스타트랙 - 한글화 버전</h2>
-            <a href="https://github.com/kapple2/koreanization/tree/main/startrek_ko" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/koreanization/tree/main/startrek_ko" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/koreanization/main/startrek_ko/startrek-ko.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/Lv-zkGUHGOU" title="애플2용 스타트랙 게임 한글화 버전 플레이 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -168,7 +212,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>마이크로 소코반 - 한글화 버전</h2>
-            <a href="https://github.com/kapple2/koreanization/tree/main/microsokoban_ko" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/koreanization/tree/main/microsokoban_ko" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/koreanization/main/microsokoban_ko/MICRO-SOKOBAN-ko.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/CveADj1nD50" title="마이크로 소코반 한글화" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -178,7 +222,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>앨리트 - 한글화 버전</h2>
-            <a href="https://github.com/kapple2/koreanization/tree/main/elite" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/koreanization/tree/main/elite" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/koreanization/main/elite/elite-ko.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/xrFdnQLICcM" title="앨리트 한글화" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -195,7 +239,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>1942 애플2 플러스 버전</h2>
-            <a href="https://github.com/kapple2/apple2-ports/tree/main/1942" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2-ports/tree/main/1942" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2-ports/main/1942/1942_msxport_2026-10-21.do&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/5K6Z2ieuc-A" title="애플2 - MSX의 1942게임 포팅" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -204,7 +248,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>Time Pilot 애플2 플러스 버전 포팅</h2>
-            <a href="https://github.com/kapple2/apple2-ports/tree/main/apple2-timepilot" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2-ports/tree/main/apple2-timepilot" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2-ports/main/apple2-timepilot/TIME_PILOT.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/yaSBiQyhJfQ" title="Time Pilot 애플2 플러스 버전 포팅" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -213,7 +257,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>애플2 플러스용 글라이더 - 마우스 카드 불필요</h2>
-            <a href="https://github.com/kapple2/apple2-ports/tree/main/glider-no_mouse" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2-ports/tree/main/glider-no_mouse" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2-ports/main/glider-no_mouse/glider-en-iiplus.po&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/UGI1E9NLCBc" title="애플2 플러스용 글라이더" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -222,7 +266,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>도스용 Sopwith 애플2로 포팅</h2>
-            <a href="https://github.com/kapple2/apple2-ports/tree/main/sopwith-apple2" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2-ports/tree/main/sopwith-apple2" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2-ports/main/sopwith-apple2/sopwith.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/jux73ByzKHI" title="애플2 Sopwith" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -232,7 +276,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>길양이 (Alley Cat)</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/alleycat" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/alleycat" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/alleycat/alleycat.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/cra74yhyWpY" title="애플2용 길양이 (Alley Cat)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -247,7 +291,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>4구 당구 게임</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/4ball-korean-pool" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/4ball-korean-pool" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/4ball-korean-pool/4ball.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/HmWnkrHevUc" title="애플2 용 4구 당구 게임" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -256,7 +300,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>화투, 맞고 게임</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/hwatu-matgo" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/hwatu-matgo" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/hwatu-matgo/war_of_flowers.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/z67_XGJIKP4" title="애플2+ 맞고(화투) 게임 AI 자동 테스트 플레이 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -265,7 +309,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>장기</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/janggi" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/janggi" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/janggi/JANGGI.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/jjtUiIh0-wM" title="애플2용 장기 게임" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -275,7 +319,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>부루마블</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/bluemarble" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/bluemarble" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/bluemarble/bluemarble.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/mpWYVkswk4Q" title="애플2용 부루마블" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -285,7 +329,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>석전(石戰)</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/stonewar" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/stonewar" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/stonewar/stonewar.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/Ujjyh15TGkY" title="애플2용 석전(石戰)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -295,7 +339,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>세포분열</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/mitosis" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/mitosis" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/mitosis/MITOSIS-KO.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/RiJEL3sfzUc" title="세포분열" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -305,7 +349,7 @@
         <li class="repo-card">
           <div class="repo-card-head">
             <h2>자치기</h2>
-            <a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/jachigi" target="_blank" rel="noopener">다운 받기</a>
+            <span class="repo-card-links"><a href="https://github.com/kapple2/apple2plus-software-by-kapple2/tree/main/jachigi" target="_blank" rel="noopener">다운 받기</a><a href="emulator/?d1=https://raw.githubusercontent.com/kapple2/apple2plus-software-by-kapple2/main/jachigi/jachigi.dsk&amp;back=repo" title="브라우저 에뮬레이터에서 바로 실행">에뮬레이터로 실행</a></span>
           </div>
           <div class="repo-video">
             <iframe src="https://www.youtube-nocookie.com/embed/Q4uOijrR1wA" title="자치기" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
