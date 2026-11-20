@@ -103,6 +103,17 @@ body {
     height: 100%;
 }
 
+/* the beige frame around the monitor would stay behind as a small rounded blob at the top */
+body.full-page .emu-panel {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* the site's header (logo, menu, theme and language buttons) would lie over the screen */
+body.full-page header.top,
 .full-page #header,
 .full-page .inset,
 .full-page #reset {
