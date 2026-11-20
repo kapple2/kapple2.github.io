@@ -148,8 +148,20 @@
     return up.startsWith(START) ? up : null;
   }
 
+  // Decode a percent-encoded name. The mirror writes some names in Latin-1 (%ED is í, not UTF-8),
+  // which decodeURIComponent rejects; those runs are decoded byte by byte instead.
+  function decodeName(text) {
+    return text.replace(/(?:%[0-9A-Fa-f]{2})+/g, (run) => {
+      try {
+        return decodeURIComponent(run);
+      } catch (e) {
+        return run.replace(/%([0-9A-Fa-f]{2})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+      }
+    });
+  }
+
   function folderTitle(url) {
-    return decodeURIComponent(new URL(url).pathname) || "/";
+    return decodeName(new URL(url).pathname) || "/";
   }
 
   // ---- cache -------------------------------------------------------------
@@ -212,7 +224,7 @@
       if (!abs.startsWith(START) || abs === url || seen.has(abs)) return;
       seen.add(abs);
       const dir = raw.endsWith("/");
-      const name = decodeURIComponent(raw.replace(/\/$/, ""));
+      const name = decodeName(raw.replace(/\/$/, ""));
       if (dir || DISK.test(name)) entries.push({ url: abs, dir, name });
     });
     entries.sort((x, y) => (y.dir - x.dir) || x.name.localeCompare(y.name, "en", { sensitivity: "base" }));
