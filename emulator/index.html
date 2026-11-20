@@ -43,7 +43,9 @@
   /* same page background as the other site pages; the emulator keeps its own box sizing */
   *, *::before, *::after { box-sizing: content-box; }
   body { margin: 0; background-color: var(--bg); }
-  .outer { margin: 16px auto; }
+  /* the panel is as wide as its keyboard and monitor; centred when it fits, starting at the left edge (scrollable) when it does not */
+  .outer { margin: 16px auto; display: flex; flex-direction: column; align-items: safe center; }
+  .outer > #file-warning { align-self: stretch; }
   .app-emu { padding-bottom: 0; }
   /* the menu: the same sizes and fonts as the home page */
   .top, .top * { box-sizing: border-box; }
@@ -54,7 +56,7 @@
   /* the frames for the tools, the monitor and the keyboard keep the emulator colour */
   .inset, #display, #keyboard { background-color: #c4c1a0; }
   /* the outer box around the monitor and the control boxes, in the old emulator colour */
-  .emu-panel { background-color: #c4c1a0; border-radius: 12px; padding: 8px 6px 4px; margin: 12px auto 16px; box-shadow: var(--shadow); }
+  .emu-panel { background-color: #c4c1a0; border-radius: 12px; padding: 8px 6px 4px; margin: 12px 0 16px; width: max-content; box-shadow: var(--shadow); }
 </style>
 <link rel="stylesheet" href="fontawesome/css/all.css" />
 
@@ -426,7 +428,7 @@
 
   <script src="../theme.js"></script>
   <script src="../translate.js"></script>
-  <script src="main2.bundle.js"></script>
+  <script src="pick.js"></script>
   <script src="companion.js"></script>
   <script src="mirror.js"></script>
 </body>

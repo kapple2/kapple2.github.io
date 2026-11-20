@@ -12,7 +12,7 @@ the commits taken are in `UPSTREAM.txt`, including the two submodules `cpu6502` 
 - **"KAPPLE ][" on the power-up screen** instead of "APPLE ][". The title is printed by the monitor ROM; its ninth
   character cannot be added in place (the byte before the text is part of the disk-boot ID table), so the `JSR HOME` at
   `$FB60` jumps to a 9-byte stub in unused ROM space at `$FBB4` that does HOME and stores a `K` at `$040E`.
-  `tools/patch_title.py` applies it to `js/roms/system/fpbasic.ts` (Apple ][ Plus) and `intbasic.ts` (already applied).
+  `tools/patch_title.py` applies it to `js/roms/system/fpbasic.ts` (Apple ][ Plus) only; the other ROMs keep the stock title.
 - **Disks from the address:** `index.html?d1=URL&d2=URL` loads the disk images into drive 1 and drive 2 right
   away and boots from drive 1. A URL can be absolute or relative; `.dsk`, `.do`, `.po`, `.nib`, `.woz`, ... or a `.json` disk
   description. A different site must allow it with CORS headers (the same site always works). Both disks are loaded
