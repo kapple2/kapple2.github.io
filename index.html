@@ -31,6 +31,7 @@
           <a href="#/company" data-link>회사</a>
           <a href="#/repo" data-link>저장소</a>
           <a href="emulator/" title="브라우저에서 돌아가는 Apple ][ Plus 에뮬레이터">에뮬레이터</a>
+          <a href="kbasic.web/" title="브라우저에서 한글 키워드 애플소프트 베이직을 써 봅니다">한글베이직</a>
           <a class="nav-out" href="https://github.com/kapple2/wiki/wiki/" target="_blank" rel="noopener">위키페이지</a>
           <a class="nav-out" href="https://archive.org/details/@kapple_" target="_blank" rel="noopener">아카이브</a>
           <a class="nav-out" href="https://www.youtube.com/@%EC%BA%90%ED%94%8C2%EC%B1%84%EB%84%90" target="_blank" rel="noopener">유튜브채널</a>
@@ -123,8 +124,8 @@
         </div>
       </div>
 
-      <div class="fiction-box">
-        <h2>이 회사는 가상의 회사입니다</h2>
+      <details class="fiction-box">
+        <summary><h2>이 회사는 가상의 회사입니다</h2></summary>
         <div class="prose">
           <p>
             여기까지 읽으셨다면 조금 놀라셨을지도 모르겠습니다. 캐플소프트는 <strong>실제로 존재하지 않는 가상의 회사</strong>입니다.
@@ -138,7 +139,8 @@
           <p>캐플소프트의 프로그램들은 저장소 페이지에서 만날 수 있습니다.</p>
           <p class="fiction-cta"><a class="btn ghost" href="#/repo" data-link>저장소 보기</a></p>
         </div>
-      </div>
+        <div class="fiction-dance" aria-hidden="true"><img src="assets/clown-dancing.gif" alt="" /></div>
+      </details>
     </section>
   </template>
 
@@ -372,6 +374,7 @@
   </template>
 
   <script src="app.js"></script>
+  <script src="clown-music.js"></script>
   <script src="theme.js"></script>
   <script src="translate.js"></script>
 </body>

@@ -440,9 +440,10 @@ font font {
 }
 
 .fiction-box {
-  max-width: 30rem;
-  margin: 2.5rem auto 0;
-  padding: 1rem 1.25rem;
+  position: relative;
+  max-width: none;
+  margin: 2rem 0 0;
+  padding: 0.8rem 1.25rem;
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: 4px;
@@ -452,9 +453,46 @@ font font {
 }
 
 .fiction-box h2 {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.4rem;
   font-size: 1rem;
   text-align: center;
+}
+
+/* foldable: the heading is the toggle, folded by default */
+.fiction-box > summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding-right: 1.5rem;
+}
+
+.fiction-box > summary::-webkit-details-marker {
+  display: none;
+}
+
+.fiction-box > summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.fiction-box[open] > summary::after {
+  content: "\2212"; /* minus sign */
+}
+
+.fiction-box:not([open]) > summary h2 {
+  margin: 0;
+}
+
+.fiction-box > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .fiction-cta {
@@ -469,7 +507,44 @@ font font {
 }
 
 .fiction-box .prose p {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.5rem;
+}
+
+/* the clown dances in the empty bottom-right corner of the note, beside the button */
+.fiction-dance {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 0.5rem;
+  width: 300px;
+  height: 120px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fiction-dance img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 110px;
+  width: auto;
+  margin-left: -31px;
+  transform-origin: 50% 100%;
+  animation: fiction-dance 2.4s ease-in-out infinite;
+}
+
+/* a small sway: left, centre, right, centre */
+@keyframes fiction-dance {
+  0%   { transform: translate(-12px, 4px) rotate(-4deg); }
+  25%  { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(12px, 4px) rotate(4deg); }
+  75%  { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-12px, 4px) rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fiction-dance img {
+    animation: none;
+  }
 }
 
 .prose strong {
@@ -671,6 +746,17 @@ font font {
 .footer > span {
   margin: 0 !important;
   position: relative;
+}
+
+@media (max-width: 600px) {
+  .fiction-dance {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.6rem auto 0;
+  }
 }
 
 @media (max-width: 860px) {
