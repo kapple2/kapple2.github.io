@@ -534,11 +534,11 @@ font font {
 
 /* a small sway: left, centre, right, centre */
 @keyframes fiction-dance {
-  0%   { transform: translate(-12px, 4px) rotate(-4deg); }
+  0%   { transform: translate(-2px, 1.5px) rotate(-1deg); }
   25%  { transform: translate(0, 0) rotate(0deg); }
-  50%  { transform: translate(12px, 4px) rotate(4deg); }
+  50%  { transform: translate(2px, 1.5px) rotate(1deg); }
   75%  { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(-12px, 4px) rotate(-4deg); }
+  100% { transform: translate(-2px, 1.5px) rotate(-1deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
