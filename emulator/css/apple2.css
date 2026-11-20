@@ -418,7 +418,7 @@ a.button:hover {
 }
 
 .apple2e #keyboard .row {
-    width: 610px;
+    width: 603px; /* the keys of the //e layout span 603px; the panel is sized to them */
 }
 
 #keyboard .row0 {
@@ -634,11 +634,16 @@ a.button:hover {
 }
 
 .apple2e #display {
-    margin: 5px;
+    margin: 5px auto;
+}
+
+/* the //e keyboard has more keys per row (DELETE, \, the arrows), so the whole case is wider than the ][+ */
+.apple2e .outer {
+    width: 660px;
 }
 
 .apple2e .inset {
-    width: 604px;
+    width: 623px; /* 19px inside each side of the keys (603px), so the keyboard is centred in the panel */
 }
 
 .apple2e #keyboard .key-CTRL {
@@ -718,6 +723,10 @@ a.button:hover {
 #reset-row .inset {
     margin: 0;
     width: 604px;
+}
+
+.apple2e #reset-row .inset {
+    width: 636px;
 }
 
 #reset {
