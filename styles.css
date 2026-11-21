@@ -532,6 +532,46 @@ font font {
   animation: fiction-dance 2.4s ease-in-out infinite;
 }
 
+/* speech bubble shown while the pointer is over the clown (a sibling, since .fiction-dance clips its content) */
+.fiction-bubble {
+  position: absolute;
+  right: 5.5rem;
+  bottom: 125px;
+  max-width: 220px;
+  padding: 0.5rem 0.8rem;
+  background: #fff;
+  color: #222;
+  border: 2px solid #333;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.15s, transform 0.15s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fiction-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  background: #fff;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+}
+
+.fiction-dance:hover + .fiction-bubble {
+  opacity: 1;
+  transform: none;
+}
+
 /* a small sway: left, centre, right, centre */
 @keyframes fiction-dance {
   0%   { transform: translate(-2px, 1.5px) rotate(-1deg); }
