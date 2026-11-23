@@ -75,9 +75,21 @@
           이 페이지는 그 기억과, Apple II 관련 자료·코드·문서를 모아 두기 위한 공간입니다.
         </p>
       </div>
-      <figure class="inline-figure">
-        <img src="assets/kapple-ii-plus-about.png?v=2" alt="KAPPLE ][ 컴퓨터와 모니터" width="900" height="994" />
-      </figure>
+      <div class="about-stage">
+        <figure class="inline-figure about-computer">
+          <a class="home-link" href="https://sungjookim.com/" target="_blank" rel="noopener"
+             aria-label="제 홈페이지 (sungjookim.com)">
+            <img src="assets/kapple-ii-plus-about.png?v=2" alt="KAPPLE ][ 컴퓨터와 모니터" width="900" height="994" />
+          </a>
+        </figure>
+        <div class="sam-card" id="sam-card" role="button" tabindex="0"
+             aria-label="S.A.M. 음성 카드: 컴퓨터로 끌어다 놓으면 말을 합니다">
+          <div class="sam-bubble" aria-hidden="true">저를 끌어다 컴퓨터에 놓아 주세요!</div>
+          <div class="sam-body">
+            <img src="assets/sam-card.png?v=1" alt="S.A.M. 음성 합성 카드" width="432" height="259" draggable="false" />
+          </div>
+        </div>
+      </div>
       <h2>애플2 카페</h2>
       <div class="prose">
         <p>
@@ -149,23 +161,30 @@
 
   <template id="tpl-repo">
     <section class="page">
-      <h1>저장소</h1>
-      <div class="prose">
-        <p>
-          이 저장소는 Apple II / KAPPLE ][ 관련 코드, 정보, 문서를 모아 두는 곳입니다.
-        </p>
-        <p>
-          플레이 영상은
-          <a href="https://www.youtube.com/@%EC%BA%90%ED%94%8C2%EC%B1%84%EB%84%90" target="_blank" rel="noopener">캐플2채널</a>
-          에 있습니다.
-        </p>
-      </div>
+      <div class="repo-intro">
+        <div class="repo-intro-text">
+          <h1>저장소</h1>
+          <div class="prose">
+            <p>
+              이 저장소는 Apple II / KAPPLE ][ 관련 코드, 정보, 문서를 모아 두는 곳입니다.
+            </p>
+            <p>
+              플레이 영상은
+              <a href="https://www.youtube.com/@%EC%BA%90%ED%94%8C2%EC%B1%84%EB%84%90" target="_blank" rel="noopener">캐플2채널</a>
+              에 있습니다.
+            </p>
+          </div>
 
-      <p class="repo-github">
-        <a class="btn primary" href="https://github.com/kapple2" target="_blank" rel="noopener">
-          github.com/kapple2
-        </a>
-      </p>
+          <p class="repo-github">
+            <a class="btn primary" href="https://github.com/kapple2" target="_blank" rel="noopener">
+              github.com/kapple2
+            </a>
+          </p>
+        </div>
+        <picture class="repo-intro-img">
+          <img src="assets/korean-container-jar.png?v=3" alt="한국 전통 항아리(옹기) 세 개" width="581" height="502" />
+        </picture>
+      </div>
 
 <!-- 한글화 --------------------------------------------------------------------------------->
       <h2 class="repo-more-title">한글화</h2>
@@ -376,6 +395,7 @@
     </section>
   </template>
 
+  <script src="assets/samjs.min.js"></script>
   <script src="app.js"></script>
   <script src="clown-music.js"></script>
   <script src="theme.js"></script>
