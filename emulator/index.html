@@ -30,6 +30,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../styles.css" />
+<style>
+  /* opening show (matrix_rain.js): the page is black at first; the curtain fades out while the rain ends */
+  html.mr-intro::before { content: ""; position: fixed; inset: 0; z-index: 2147483000; background: #000; opacity: 1; pointer-events: auto; }
+  html.mr-intro.mr-reveal::before { opacity: 0; pointer-events: none; transition: opacity var(--mr-fade, 4500ms) ease-in; }
+</style>
+<script>
+  (function () {
+    try {
+      var r = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seen = false;
+      try { seen = localStorage.getItem('kapple2_emu_intro_seen') === '1'; } catch (e2) {}   // watched it before
+      if (r || seen || /[?&](d1|d2|disk)=/.test(location.search)) return;   // no show: reduced motion, seen before, or a disk in the address
+      var h = document.documentElement;
+      h.classList.add('mr-intro');
+      setTimeout(function () { h.classList.remove('mr-intro', 'mr-reveal'); }, 25000);   // never stay black
+    } catch (e) {}
+  })();
+</script>
 <script>
   (function () {
     try {
@@ -47,6 +65,9 @@
   .outer { margin: 16px auto; display: flex; flex-direction: column; align-items: safe center; }
   .outer > #file-warning { align-self: stretch; }
   .app-emu { padding-bottom: 0; }
+  /* the notice: as wide as the menu, with a line above it like the menu's line */
+  .emu-license { width: min(1100px, calc(100% - 2rem)); margin: 22px auto 28px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 0.8rem; opacity: 0.8; line-height: 1.6; color: var(--ink); }
+  .emu-license a { color: inherit; }
   /* the menu: the same sizes and fonts as the home page */
   .top, .top * { box-sizing: border-box; }
   .top { font-family: var(--font-sans); font-size: 16px; line-height: normal; color: var(--ink); }
@@ -73,9 +94,11 @@
     <header class="top">
       <nav class="nav" aria-label="주요 메뉴">
         <a href="../#/" class="brand"><img class="brand-logo" src="../assets/kapple-logo.png" alt="KAPPLE ][" width="1000" height="302" /></a>
-        <div class="nav-links">
+        <div class="nav-tools">
           <div id="themeHost" class="theme-host"></div>
           <div id="trnHost" class="trn-host"></div>
+        </div>
+        <div class="nav-links">
           <a href="../#/">홈</a>
           <a href="../#/company">회사</a>
           <a href="../#/repo">저장소</a>
@@ -164,6 +187,7 @@
       <button onclick="Apple2.openOptions()" title="설정 (F4)">
         <i class="fas fa-cog"></i>
       </button>
+      <button type="button" id="btn_emu_tut" class="tut-btn" title="사용법 안내 보기">사용 안내</button>
     </div>
     <div class="inset">
       <div style="margin: 0 10px">
@@ -172,6 +196,7 @@
     </div>
     </div>
   </div>
+  <p class="emu-license">이 에뮬레이터는 Will Scullin 의 <a href="https://github.com/whscullin/apple2js" target="_blank" rel="noopener">Apple ][js</a>를 고쳐 만든 것입니다. Apple ][js 는 <b>MIT License</b> 로 공개되어 있으며, 전문은 <a href="LICENSE" target="_blank">LICENSE</a> 에 있습니다. 원 소스 Copyright &copy; 2010-2021 Will Scullin and contributors. 화면 글자를 한글로 바꾸고 디스크 목록을 넣는 등의 수정은 KBASIC 프로젝트에서 했습니다.</p>
 
   <div class="modal" id="loading-modal" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
@@ -434,5 +459,8 @@
   <script src="pick.js"></script>
   <script src="companion.js"></script>
   <script src="mirror.js"></script>
+  <script src="../kbasic.web/mascot.js"></script>
+  <script src="emu_tutorial.js"></script>
+  <script src="matrix_rain.js"></script>
 </body>
 </html>
