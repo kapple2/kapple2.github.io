@@ -61,7 +61,6 @@
 
   function reveal() {
     revealed = true;
-    try { localStorage.setItem('kapple2_emu_intro_seen', '1'); } catch (e) { /* no storage: the show comes every time */ }   // watched: not again next time
     html.style.setProperty('--mr-fade', FADE_MS + 'ms');
     html.classList.add('mr-reveal');
   }

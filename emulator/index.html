@@ -45,8 +45,8 @@
   (function () {
     try {
       var r = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var seen = false;
-      try { seen = localStorage.getItem('kapple2_emu_intro_seen') === '1'; } catch (e2) {}   // watched it before
+      var seen = false;   // seen = this page was opened in the last 24 hours (every visit restarts the 24 hours)
+      try { var now = Date.now(), last = +localStorage.getItem('kapple2_emu_last_visit') || 0; seen = now - last < 864e5; localStorage.setItem('kapple2_emu_last_visit', String(now)); } catch (e2) {}
       if (r || seen || /[?&](d1|d2|disk)=/.test(location.search)) return;   // no show: reduced motion, seen before, or a disk in the address
       var h = document.documentElement;
       h.classList.add('mr-intro');
